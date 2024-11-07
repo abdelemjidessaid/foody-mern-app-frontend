@@ -16,12 +16,20 @@ function UsernameMenu() {
         {`${user?.given_name} ${user?.family_name}`}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
+        {/* Manage Restaurant */}
+        <DropdownMenuItem>
+          <Link to="/manage-restaurant" className="font-bold text-orange-500">
+            Manage Restaurant
+          </Link>
+        </DropdownMenuItem>
+        {/* User Profile */}
         <DropdownMenuItem>
           <Link to="/user-profile" className="font-bold text-orange-500">
             User profile
           </Link>
         </DropdownMenuItem>
         <Separator />
+        {/* Logout */}
         <DropdownMenuItem>
           <Button onClick={() => logout()} className="flex flex-1 font-bold bg-orange-500">
             Logout
