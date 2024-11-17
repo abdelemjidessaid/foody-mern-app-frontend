@@ -1,6 +1,8 @@
 # environment variables 
 .env
 
+connect-git
+
 # Logs
 logs
 *.log

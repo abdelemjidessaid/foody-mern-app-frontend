@@ -5,10 +5,12 @@ import AuthCallbackPage from "./pages/AuthCallbackPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage";
+import SearchPage from "./pages/SearchPage";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Homa Page  */}
       <Route
         path="/"
         element={
@@ -17,7 +19,18 @@ const AppRoutes = () => {
           </Layout>
         }
       />
+      {/* Authentication Callback */}
       <Route path="/auth-callback" element={<AuthCallbackPage />} />
+      {/* Search  */}
+      <Route
+        path="/search/:city"
+        element={
+          <Layout showHero={false}>
+            <SearchPage />
+          </Layout>
+        }
+      />
+      {/* Protected Route for User Authentication */}
       <Route element={<ProtectedRoute />}>
         {/* User Profie Route */}
         <Route
@@ -38,6 +51,7 @@ const AppRoutes = () => {
           }
         />
       </Route>
+      {/* Other Navigations */}
       <Route path="*" element={<Navigate to={"/"} />} />
     </Routes>
   );
